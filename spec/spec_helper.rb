@@ -5,6 +5,8 @@ require 'rspec'
 require 'rack/test'
 include Rack::Test::Methods
 
+ActiveRecord::Migrator.migrate(File.join(File.dirname(__FILE__), '..', 'db/migrate'))
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
