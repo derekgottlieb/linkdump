@@ -1,6 +1,7 @@
 # linkdump
 Simple link dump Sinatra app (JSON API + basic web views)
 
+![Build status](https://travis-ci.org/derekgottlieb/linkdump.svg)
 [![Dependency Status](https://gemnasium.com/badges/github.com/derekgottlieb/linkdump.svg)](https://gemnasium.com/github.com/derekgottlieb/linkdump)
 [![Security](https://hakiri.io/github/derekgottlieb/linkdump/master.svg)](https://hakiri.io/github/derekgottlieb/linkdump/master)
 [![Code Climate](https://codeclimate.com/github/derekgottlieb/linkdump/badges/gpa.svg)](https://codeclimate.com/github/derekgottlieb/linkdump)

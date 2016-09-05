@@ -1,6 +1,6 @@
 <ul>
 <% @links.each do |link| %>
-<%="<li><a href=#{link.url}>#{link.title.blank? ? link.url : link.title}</a> (#{link.tags.split(',').map {|t| "<a href=/links?tag=#{t}>#{t}</a>" }.join(', ')})</li>\n"%>
+<%="<li><a href=#{link.url}>#{link.title.blank? ? link.url : link.title}</a> (#{link.tags.split(',').map {|t| "<a href=/links?tag=#{t}>#{t}</a>" }.join(', ') unless link.tags.nil?})</li>\n"%>
 <% end %>
 </ul>
 
