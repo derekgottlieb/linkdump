@@ -1,13 +1,10 @@
-describe 'LinkDump Service' do
+describe 'routes/links' do
+  before(:all) do
+    ActiveRecord::FixtureSet.create_fixtures(File.join(File.dirname(__FILE__), '..', 'fixtures'), 'links')
+  end
 
   def app
     Sinatra::Application
-  end
-
-  it "should load the home page" do
-    get '/'
-    expect(last_response).to be_ok
-    expect(last_response.body).to eq("wubalubadubdub\n")
   end
 
   context "/links" do

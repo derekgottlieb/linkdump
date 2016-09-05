@@ -1,0 +1,24 @@
+linkwitheverything:
+  url: http://linkwitheverything.example.com
+  title: Link with a Title and Multiple Tags
+  tags: tagone,tagtwo,tagthree
+
+linkwithnotitle:
+  url: http://linkwithnotitle.example.com
+  title:
+  tags: tagone,tagtwo
+
+linkwithnotags:
+  url: http://linkwithnotags.example.com
+  title: Link with No Tags
+  tags:
+
+linkwithonetags:
+  url: http://linkwithonetags.example.com
+  title: Link with One Tag
+  tags: tagtwo
+
+linkwithnothing:
+  url: http://linkwithnothing.example.com
+  title:
+  tags:

@@ -3,6 +3,7 @@ ENV['RACK_ENV'] = 'test'
 require File.join(File.dirname(__FILE__), '..', 'app')
 require 'rspec'
 require 'rack/test'
+require 'active_record/fixtures'
 include Rack::Test::Methods
 
 ActiveRecord::Migrator.migrate(File.join(File.dirname(__FILE__), '..', 'db/migrate'))
