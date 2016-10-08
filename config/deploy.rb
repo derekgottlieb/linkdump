@@ -1,9 +1,12 @@
 # config valid only for current version of Capistrano
 lock '3.6.1'
 
+require 'etc'
+
 set :application, 'linkdump'
-#set :repo_url, 'git@bitbucket.org:derekgottlieb/linkdump.git'
 set :repo_url, 'git@github.com:derekgottlieb/linkdump.git'
+set :tmp_dir, "/tmp/#{Etc.getlogin}" # to deploy on multi-user machines
+set :rvm_ruby_version, File.read("#{File.dirname(__FILE__)}/../.ruby-version").strip
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
