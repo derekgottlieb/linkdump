@@ -2,7 +2,8 @@
 lock '3.6.1'
 
 set :application, 'linkdump'
-set :repo_url, 'git@bitbucket.org:derekgottlieb/linkdump.git'
+#set :repo_url, 'git@bitbucket.org:derekgottlieb/linkdump.git'
+set :repo_url, 'git@github.com:derekgottlieb/linkdump.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
