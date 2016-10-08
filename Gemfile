@@ -10,7 +10,7 @@ gem 'sinatra-activerecord'
 gem 'mechanize'
 gem 'rake'
 gem 'rollbar'
-gem "capistrano"
+gem "capistrano", '3.6.1'
 gem "capistrano-bundler"
 gem "capistrano-passenger"
 gem "capistrano-rvm"
