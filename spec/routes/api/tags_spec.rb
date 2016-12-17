@@ -3,6 +3,11 @@ describe 'routes/api/tags' do
     ActiveRecord::FixtureSet.create_fixtures(File.join(File.dirname(__FILE__), '..', 'fixtures'), 'tags')
   end
 
+  include AuthHelper
+  before(:each) do
+    http_login
+  end
+
   def app
     Sinatra::Application
   end

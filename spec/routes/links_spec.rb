@@ -3,6 +3,11 @@ describe 'routes/links' do
     ActiveRecord::FixtureSet.create_fixtures(File.join(File.dirname(__FILE__), '..', 'fixtures'), 'links')
   end
 
+  include AuthHelper
+  before(:each) do
+    http_login
+  end
+
   def app
     Sinatra::Application
   end

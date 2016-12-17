@@ -45,6 +45,10 @@ error do
   {"code" => 500, "message" => env['sinatra.error']}.to_json
 end
 
+use Rack::Auth::Basic do |username, password|
+  username == CONFIG['auth_username'] && password == CONFIG['auth_password']
+end
+
 before do
   content_type :json
 end
