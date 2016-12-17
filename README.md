@@ -11,9 +11,11 @@ https://gist.github.com/derekgottlieb/a077355a4c355301577df93ee9f413f9
 
 ## Getting started with development
 
-  rvm install .
-  gem install bundler
-  rvm use .
-  bundle install
-  cp config/config.yml.example config/config.yml
-  bundle exec rackup
+```
+rvm install .
+gem install bundler
+rvm use .
+bundle install
+cp config/config.yml.example config/config.yml
+bundle exec rackup
+```
