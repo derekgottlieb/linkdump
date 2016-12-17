@@ -11,6 +11,7 @@ gem 'sqlite3'
 # also, AR 5.x are incompatible with ruby 3
 # gem 'sinatra-activerecord', '2.0.17'
 gem 'sinatra-activerecord'
+gem 'sinatra-cross_origin'
 gem 'mechanize'
 gem 'rake'
 gem 'capistrano', '~> 3.15.0'

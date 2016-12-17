@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'sinatra/cross_origin'
 require 'json'
 require 'mechanize'
 #require 'pry'
@@ -20,6 +21,21 @@ set :database, DB_CONFIG
 
 error do
   {"code" => 500, "message" => env['sinatra.error']}.to_json
+end
+
+configure do
+  enable :cross_origin
+end
+
+set :allow_origin, :any
+set :allow_methods, [:get, :post, :options]
+set :allow_credentials, true
+set :expose_headers, ['Content-Type']
+
+options "*" do
+  response.headers["Allow"] = settings.allow_methods.map {|s| s.to_s.upcase}.join(",")
+  response.headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Cache-Control, Accept"
+  200
 end
 
 helpers do
