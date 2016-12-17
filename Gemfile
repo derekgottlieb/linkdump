@@ -8,10 +8,10 @@ gem 'sinatra-activerecord'
 gem 'mechanize'
 gem 'rake'
 gem 'rollbar'
-gem "capistrano", '3.6.1'
-gem "capistrano-bundler"
-gem "capistrano-passenger"
-gem "capistrano-rvm"
+gem 'capistrano', '3.7.1'
+gem 'capistrano-bundler'
+gem 'capistrano-passenger'
+gem 'capistrano-rvm'
 gem 'pry'
 gem 'will_paginate'
 
@@ -20,6 +20,6 @@ group :development do
 end
 
 group :test do
-  gem "rspec"
-  gem "rack-test"
+  gem 'rspec'
+  gem 'rack-test'
 end

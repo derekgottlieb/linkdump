@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.6.1'
+lock '3.7.1'
 
 require 'etc'
 
@@ -13,9 +13,6 @@ set :rvm_ruby_version, File.read("#{File.dirname(__FILE__)}/../.ruby-version").s
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/var/www/linkdump.derekgottlieb.com'
-
-# Default value for :scm is :git
-# set :scm, :git
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

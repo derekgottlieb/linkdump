@@ -15,7 +15,7 @@ GEM
     airbrussh (1.1.1)
       sshkit (>= 1.6.1, != 1.7.0)
     arel (7.1.4)
-    capistrano (3.6.1)
+    capistrano (3.7.1)
       airbrussh (>= 1.0.0)
       capistrano-harrow
       i18n
@@ -117,7 +117,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
-  capistrano (= 3.6.1)
+  capistrano (= 3.7.1)
   capistrano-bundler
   capistrano-passenger
   capistrano-rvm
