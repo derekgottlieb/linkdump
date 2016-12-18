@@ -12,9 +12,9 @@ describe 'routes/links' do
     Sinatra::Application
   end
 
-  context "/links" do
+  context "/" do
     it "should respond with html" do
-      get '/links'
+      get '/'
       expect(last_response).to be_ok
       expect(last_response.content_type).to eq("text/html;charset=utf-8")
     end

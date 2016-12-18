@@ -45,8 +45,23 @@ error do
   {"code" => 500, "message" => env['sinatra.error']}.to_json
 end
 
-use Rack::Auth::Basic do |username, password|
-  username == CONFIG['auth_username'] && password == CONFIG['auth_password']
+helpers do
+  def protected!
+    return if authorized?
+    headers['WWW-Authenticate'] = 'Basic realm="Restricted Area"'
+    halt 401, 'Not authorized'
+  end
+
+  def protected_json!
+    return if authorized?
+    headers['WWW-Authenticate'] = 'Basic realm="Restricted Area"'
+    halt 401, {'code' => 401, 'message' => 'Not authorized'}.to_json
+  end
+
+  def authorized?
+    @auth ||=  Rack::Auth::Basic::Request.new(request.env)
+    @auth.provided? and @auth.basic? and @auth.credentials and @auth.credentials == [CONFIG['auth_username'], CONFIG['auth_password']]
+  end
 end
 
 before do
@@ -54,8 +69,10 @@ before do
 end
 
 get '/' do
+  @links = Link.get(params)
+
   content_type :html
-  send_file './public/index.html'
+  halt erb :links_index
 end
 
 after do
