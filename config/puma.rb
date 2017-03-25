@@ -2,7 +2,7 @@ workers Integer(ENV['WEB_CONCURRENCY'] || 2)
 threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
 threads threads_count, threads_count
 
-#preload_app!
+preload_app!
 
 rackup      DefaultRackup
 port        ENV['PORT']     || 3000
@@ -16,11 +16,13 @@ on_worker_boot do
 end
 
 # If we were preloading the app, might want this
-#before_fork do
-#  ActiveRecord::Base.connection_pool.disconnect!
-#end
+before_fork do
+  ActiveRecord::Base.connection_pool.disconnect!
+end
 
 lowlevel_error_handler do |e|
   Rollbar.critical(e)
   [500, {}, ["<h1>We need more monkeys!</h1>\n\nAn error has occurred, and engineers have been informed. Please reload the page.\n"]]
 end
+
+stdout_redirect '/var/www/linkdump/shared/log/stdout', '/var/www/linkdump/shared/log/stderr', true
