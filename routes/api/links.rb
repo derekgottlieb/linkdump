@@ -7,6 +7,7 @@ get '/api/links/:id' do
 end
 
 post '/api/links' do
+  protected_json!
   request.body.rewind
   request_payload = JSON.parse(request.body.read)
 
@@ -21,6 +22,7 @@ post '/api/links' do
 end
 
 put '/api/links/:id' do
+  protected_json!
   link = Link.where(id: params['id']).first
 
   if link
@@ -35,6 +37,7 @@ put '/api/links/:id' do
 end
 
 delete '/api/links/:id' do
+  protected_json!
   link = Link.where(id: params['id'])
 
   if link.destroy_all
