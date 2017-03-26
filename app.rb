@@ -54,9 +54,16 @@ before do
 end
 
 get '/' do
+  @links = Link.get(params)
+
   content_type :html
-  send_file './public/index.html'
+  halt erb :links_index
 end
+
+#get '/' do
+#  content_type :html
+#  send_file './public/index.html'
+#end
 
 after do
   # Close the connection after the request is done so that we don't
