@@ -1,5 +1,5 @@
 language: ruby
 rvm:
-  - 2.3.3
+  - 2.3.4
 script: bundle exec rspec
 before_script: for e in config/*.yml.example; do cp $e ${e%.example}; done
