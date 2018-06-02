@@ -16,6 +16,8 @@ set :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/var/www/linkdump.derekgottlieb.com'
 
+set :puma_init_active_record, true
+
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -31,6 +33,7 @@ append :linked_files, 'db/linkdump.sqlite3', 'config/config.yml', 'config/databa
 
 # Default value for linked_dirs is []
 # append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
+append :linked_dirs, 'log'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
