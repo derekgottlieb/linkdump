@@ -54,7 +54,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.3.0)
-    minitest (5.11.2)
+    minitest (5.11.3)
     multi_json (1.13.1)
     mustermann (1.0.1)
     net-http-digest_auth (1.4.1)
