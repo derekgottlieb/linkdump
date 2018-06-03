@@ -3,6 +3,7 @@ ENV['RACK_ENV'] = 'test'
 require File.join(File.dirname(__FILE__), '..', 'app')
 require 'rspec'
 require 'rack/test'
+require 'pry'
 require 'active_record/fixtures'
 require_relative 'support/auth_helper'
 include Rack::Test::Methods
