@@ -24,6 +24,9 @@ configure do
     config.environment = Sinatra::Base.environment
     config.framework = "Sinatra: #{Sinatra::VERSION}"
     config.root = Dir.pwd
+    unless Sinatra::Base.environment == 'production'
+      config.enabled = false
+    end
   end
 end
 
