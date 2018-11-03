@@ -21,7 +21,6 @@ before_fork do
 end
 
 lowlevel_error_handler do |e|
-  Rollbar.critical(e)
   [500, {}, ["<h1>We need more monkeys!</h1>\n\nAn error has occurred, and engineers have been informed. Please reload the page.\n"]]
 end
 

@@ -1,4 +1,3 @@
-rollbar_access_token: BIGTOKEN
 environment: development
 auth_username: username
 auth_password: password
