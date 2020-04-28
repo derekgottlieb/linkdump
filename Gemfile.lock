@@ -100,7 +100,7 @@ GEM
     sinatra-activerecord (2.0.13)
       activerecord (>= 3.2)
       sinatra (>= 1.0)
-    sqlite3 (1.4.1)
+    sqlite3 (1.4.2)
     sshkit (1.19.1)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
