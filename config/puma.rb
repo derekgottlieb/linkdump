@@ -24,4 +24,4 @@ lowlevel_error_handler do |e|
   [500, {}, ["<h1>We need more monkeys!</h1>\n\nAn error has occurred, and engineers have been informed. Please reload the page.\n"]]
 end
 
-stdout_redirect '/var/www/linkdump/shared/log/stdout', '/var/www/linkdump/shared/log/stderr', true
+stdout_redirect '/var/www/linkdump/shared/log/stdout', '/var/www/linkdump/shared/log/stderr', true unless ENV['NO_DOCKER']

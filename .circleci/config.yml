@@ -2,10 +2,18 @@ version: 2.1
 orbs:
   ruby: circleci/ruby@0.1.2
 references:
+  bundle: &bundle
+    run:
+      name: Run bundler
+      command: bundle -v; bundle config set path 'vendor/bundle'; bundle install
   copy_configs: &copy_configs
     run:
       name: Copy sample config files
       command: for e in config/*.yml.example; do cp $e ${e%.example}; done
+  migrations: &migrations
+    run:
+      name: Run db migrations
+      command: bundle exec rake db:migrate
   run_tests: &run_tests
     run:
       name: Run test suite
@@ -14,13 +22,12 @@ references:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.6
+      - image: circleci/ruby:2.7.1
+    resource_class: small
     executor: ruby/default
     steps:
       - checkout
-      - run:
-          name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
+      - <<: *bundle
       - <<: *copy_configs
+      - <<: *migrations
       - <<: *run_tests

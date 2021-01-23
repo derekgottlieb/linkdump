@@ -1,6 +1,8 @@
 *.sqlite3
+/.idea
 config/*.yml
 config/deploy/*.rb
+.circleci/local_config.yml
 /log
 
 ## Boilerplate GitHub defaults for a ruby project below
