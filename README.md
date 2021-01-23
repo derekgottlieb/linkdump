@@ -16,5 +16,5 @@ gem install bundler
 rvm use .
 bundle install
 cp config/config.yml.example config/config.yml
-bundle exec rackup
+NO_DOCKER=1 APP_DIR=$PWD bundle exec puma
 ```

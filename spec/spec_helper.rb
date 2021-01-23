@@ -1,5 +1,3 @@
-ENV['RACK_ENV'] = 'test'
-
 require File.join(File.dirname(__FILE__), '..', 'app')
 require 'rspec'
 require 'rack/test'
@@ -8,7 +6,15 @@ require 'active_record/fixtures'
 require_relative 'support/auth_helper'
 include Rack::Test::Methods
 
-ActiveRecord::Migrator.migrate(File.join(File.dirname(__FILE__), '..', 'db/migrate'))
+case
+when ActiveRecord.gem_version >= Gem::Version.new('6.0.0')
+  ActiveRecord::MigrationContext.new(File.expand_path('../db/migrate', __FILE__),
+                                     ActiveRecord::SchemaMigration).migrate
+when ActiveRecord.gem_version >= Gem::Version.new('5.2.0')
+  ActiveRecord::MigrationContext.new(File.expand_path('../db/migrate', __FILE__)).migrate
+else
+  ActiveRecord::Migrator.migrate(File.expand_path('../db/migrate', __FILE__))
+end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
