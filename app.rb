@@ -12,7 +12,7 @@ Dir.glob(["models/**/*.rb", "routes/**/*.rb"]).each do |file|
   require_relative file
 end
 
-CONFIG = YAML.load_file(Dir.pwd + '/config/config.yml')
+CONFIG = YAML.load(ERB.new(File.read(Dir.pwd + '/config/config.yml')).result)
 set :environment, CONFIG.fetch('environment', 'development')
 DB_CONFIG = YAML.load_file(Dir.pwd + '/config/database.yml').fetch(Sinatra::Base.environment.to_s)
 set :database, DB_CONFIG
