@@ -16,5 +16,6 @@ gem install bundler
 rvm use .
 bundle install
 cp config/config.yml.example config/config.yml
-NO_DOCKER=1 APP_DIR=$PWD bundle exec puma
+cp config/database.yml.example config/database.yml
+APP_DIR=$PWD CONSOLE_LOG=1 bundle exec puma
 ```
