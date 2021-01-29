@@ -4,10 +4,11 @@ threads threads_count, threads_count
 
 preload_app!
 
+APP_DIR = ENV['APP_DIR']  || '/var/www/linkdump/current'
 rackup      DefaultRackup
 port        ENV['PORT']     || 3000
 environment ENV['RACK_ENV'] || 'development'
-directory   ENV['APP_DIR']  || '/var/www/linkdump/current'
+directory   APP_DIR
 
 on_worker_boot do
   # Worker specific setup for Rails 4.1+
@@ -24,4 +25,4 @@ lowlevel_error_handler do |e|
   [500, {}, ["<h1>We need more monkeys!</h1>\n\nAn error has occurred, and engineers have been informed. Please reload the page.\n"]]
 end
 
-stdout_redirect '/var/www/linkdump/shared/log/stdout', '/var/www/linkdump/shared/log/stderr', true unless ENV['NO_DOCKER']
+stdout_redirect "#{APP_DIR}/log/stdout", "#{APP_DIR}/log/stderr", true unless ENV['CONSOLE_LOG']
