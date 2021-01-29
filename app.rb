@@ -13,8 +13,9 @@ Dir.glob(["models/**/*.rb", "routes/**/*.rb"]).each do |file|
 end
 
 CONFIG = YAML.load(ERB.new(File.read(Dir.pwd + '/config/config.yml')).result)
-set :environment, CONFIG.fetch('environment', 'development')
-DB_CONFIG = YAML.load_file(Dir.pwd + '/config/database.yml').fetch(Sinatra::Base.environment.to_s)
+environment = CONFIG.fetch('environment', 'development')
+set :environment, environment
+DB_CONFIG = YAML.load(ERB.new(File.read(Dir.pwd + '/config/database.yml')).result).fetch(environment)
 set :database, DB_CONFIG
 
 error do
