@@ -1,5 +1,6 @@
 # config valid only for current version of Capistrano
-lock '3.10.2'
+#lock '3.10.2'
+lock '3.15.0'
 
 require 'etc'
 
