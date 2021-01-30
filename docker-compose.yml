@@ -1,0 +1,9 @@
+---
+version: '2'
+services:
+  linkdump:
+    image: linkdump
+    ports:
+      - 8000:8000
+    volumes:
+      - ${PWD}/db:/usr/src/app/db
