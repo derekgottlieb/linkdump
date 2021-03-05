@@ -14,6 +14,10 @@ references:
     run:
       name: Run db migrations
       command: bundle exec rake db:migrate
+  run_linter: &run_linter
+    run:
+      name: Run linter
+      command: bundle exec rake standard
   run_tests: &run_tests
     run:
       name: Run test suite
@@ -30,4 +34,5 @@ jobs:
       - <<: *bundle
       - <<: *copy_configs
       - <<: *migrations
+      - <<: *run_linter
       - <<: *run_tests

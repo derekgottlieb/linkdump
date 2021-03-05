@@ -1,4 +1,4 @@
-get '/tags' do
+get "/tags" do
   @tags = Tag.get(params)
 
   content_type :html
