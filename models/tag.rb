@@ -1,4 +1,4 @@
-require 'will_paginate'
+require "will_paginate"
 
 class Tag < ActiveRecord::Base
   self.per_page = 20
@@ -6,7 +6,7 @@ class Tag < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
 
   def self.get(params)
-    Tag.all.paginate(:page => params[:page]).order(:name)
+    Tag.all.paginate(page: params[:page]).order(:name)
   end
 
   def self.create_any_new_tags(tags)

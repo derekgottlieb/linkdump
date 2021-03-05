@@ -1,0 +1,12 @@
+pre-commit:
+  commands:
+    standardrb:
+      run: bundle exec standardrb --fix
+
+pre-push:
+  parallel: true
+  commands:
+    standardrb:
+      run: bundle exec standardrb
+    rspec:
+      run: bundle exec rspec --fail-fast

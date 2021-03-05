@@ -1,6 +1,6 @@
-describe 'routes/links' do
+describe "routes/links" do
   before(:all) do
-    ActiveRecord::FixtureSet.create_fixtures(File.join(File.dirname(__FILE__), '..', 'fixtures'), 'links')
+    ActiveRecord::FixtureSet.create_fixtures(File.join(File.dirname(__FILE__), "..", "fixtures"), "links")
   end
 
   include AuthHelper
@@ -14,7 +14,7 @@ describe 'routes/links' do
 
   context "/" do
     it "should respond with html" do
-      get '/'
+      get "/"
       expect(last_response).to be_ok
       expect(last_response.content_type).to eq("text/html;charset=utf-8")
     end

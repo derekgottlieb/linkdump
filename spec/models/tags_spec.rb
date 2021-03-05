@@ -1,6 +1,6 @@
-describe 'models/tags' do
+describe "models/tags" do
   before(:all) do
-    ActiveRecord::FixtureSet.create_fixtures(File.join(File.dirname(__FILE__), '..', 'fixtures'), 'tags')
+    ActiveRecord::FixtureSet.create_fixtures(File.join(File.dirname(__FILE__), "..", "fixtures"), "tags")
   end
 
   def app
@@ -11,7 +11,7 @@ describe 'models/tags' do
     expect(Tag.all.size).to eq(3)
   end
 
-  context 'create_any_new_tags method' do
+  context "create_any_new_tags method" do
     it "should create a new tag when only one is specified" do
       orig_tag_count = Tag.all.size
       Tag.create_any_new_tags("newtag")
@@ -27,7 +27,7 @@ describe 'models/tags' do
     end
   end
 
-  context 'validations' do
+  context "validations" do
     it "should validate name is specified" do
       expect(Tag.create({}).save).to be(false)
     end
