@@ -19,6 +19,7 @@ gem "capistrano-bundler"
 gem "capistrano3-puma"
 gem "capistrano-rvm"
 gem "pry"
+gem "standard"
 gem "webrick"
 gem "will_paginate"
 
@@ -30,5 +31,4 @@ end
 group :test do
   gem "rspec"
   gem "rack-test"
-  gem "standard"
 end
