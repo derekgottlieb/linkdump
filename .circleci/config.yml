@@ -26,7 +26,7 @@ references:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:3.0.0
+      - image: circleci/ruby:3.0.1
     resource_class: small
     executor: ruby/default
     steps:
