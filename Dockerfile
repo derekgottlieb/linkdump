@@ -23,4 +23,4 @@ RUN chown -R ruby:ruby /usr/src/app
 USER ruby
 
 ENTRYPOINT [ "/usr/bin/dumb-init", "--" ]
-CMD [ "bundle", "exec", "puma", "-C", "/usr/src/app/config/puma.rb"]
+CMD [ "/usr/src/app/web_start.sh" ]
