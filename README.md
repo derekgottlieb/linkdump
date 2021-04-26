@@ -20,8 +20,5 @@ bundle install
 
 lefthook install # setup git hooks
 
-cp config/config.yml.example config/config.yml
-cp config/database.yml.example config/database.yml
-
 APP_DIR=$PWD CONSOLE_LOG=1 bundle exec puma
 ```
