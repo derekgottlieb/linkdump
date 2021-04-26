@@ -6,10 +6,6 @@ references:
     run:
       name: Run bundler
       command: bundle -v; bundle config set path 'vendor/bundle'; bundle install
-  copy_configs: &copy_configs
-    run:
-      name: Copy sample config files
-      command: for e in config/*.yml.example; do cp $e ${e%.example}; done
   migrations: &migrations
     run:
       name: Run db migrations
@@ -32,7 +28,6 @@ jobs:
     steps:
       - checkout
       - <<: *bundle
-      - <<: *copy_configs
       - <<: *migrations
       - <<: *run_linter
       - <<: *run_tests
