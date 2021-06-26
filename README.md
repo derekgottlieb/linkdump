@@ -2,7 +2,7 @@
 Simple link dump Sinatra app (JSON API + basic web views)
 
 [![Build status](https://circleci.com/gh/derekgottlieb/linkdump.svg?style=svg)](https://circleci.com/gh/derekgottlieb/linkdump)
-[![Security](https://hakiri.io/github/derekgottlieb/linkdump/master.svg)](https://hakiri.io/github/derekgottlieb/linkdump/master)
+[![Security](https://hakiri.io/github/derekgottlieb/linkdump/main.svg)](https://hakiri.io/github/derekgottlieb/linkdump/main)
 [![Code Climate](https://codeclimate.com/github/derekgottlieb/linkdump/badges/gpa.svg)](https://codeclimate.com/github/derekgottlieb/linkdump)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/testdouble/standard)
 
