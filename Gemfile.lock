@@ -25,7 +25,7 @@ GEM
       domain_name (~> 0.5)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
-    json (2.5.1)
+    json (2.6.0)
     lefthook (0.7.7)
     mechanize (2.8.2)
       addressable (~> 2.8)
@@ -66,7 +66,7 @@ GEM
     public_suffix (4.0.6)
     puma (5.5.2)
       nio4r (~> 2.0)
-    racc (1.5.2)
+    racc (1.6.0)
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
@@ -130,7 +130,7 @@ GEM
     webrick (1.7.0)
     webrobots (0.1.2)
     will_paginate (3.3.1)
-    zeitwerk (2.4.2)
+    zeitwerk (2.5.1)
 
 PLATFORMS
   ruby
