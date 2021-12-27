@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "sinatra", "~> 2.1.0"
 gem "json"
-gem "activerecord", "~> 6.1.0"
+gem "activerecord", "~> 7.0.0"
 gem "sqlite3"
 gem "sinatra-activerecord"
 gem "mechanize"
