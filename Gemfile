@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "sinatra", "~> 2.1"
+gem "sinatra", "~> 3.0"
 gem "json"
 gem "activerecord", "~> 7.0.0"
 gem "sqlite3"
