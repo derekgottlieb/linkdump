@@ -134,7 +134,7 @@ GEM
     unicode-display_width (2.4.2)
     webrick (1.8.1)
     webrobots (0.1.2)
-    will_paginate (3.3.1)
+    will_paginate (4.0.0)
 
 PLATFORMS
   ruby
