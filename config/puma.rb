@@ -5,7 +5,7 @@ threads threads_count, threads_count
 preload_app!
 
 APP_DIR = ENV["APP_DIR"] || "/var/www/linkdump/current"
-rackup DefaultRackup
+rackup "config.ru"
 port ENV["PORT"] || 3000
 environment ENV["RACK_ENV"] || "development"
 directory APP_DIR
