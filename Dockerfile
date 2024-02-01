@@ -7,7 +7,7 @@ RUN groupadd --system ruby && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
       dumb-init \
-      libjemalloc2
+      libjemalloc2 \
       && \
     rm -rf /var/lib/apt/lists/*
 
