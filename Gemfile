@@ -14,6 +14,7 @@ gem "webrick"
 gem "will_paginate"
 
 group :development do
+  gem "bundler-audit"
   gem "lefthook"
   gem "shotgun"
 end
