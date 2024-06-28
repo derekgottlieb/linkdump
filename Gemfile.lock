@@ -143,10 +143,10 @@ GEM
     sinatra-activerecord (2.0.27)
       activerecord (>= 4.1)
       sinatra (>= 1.0)
-    sqlite3 (1.7.3)
+    sqlite3 (2.0.2)
       mini_portile2 (~> 2.8.0)
-    sqlite3 (1.7.3-x86_64-darwin)
-    sqlite3 (1.7.3-x86_64-linux)
+    sqlite3 (2.0.2-x86_64-darwin)
+    sqlite3 (2.0.2-x86_64-linux-gnu)
     standard (1.39.0)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
@@ -190,7 +190,7 @@ DEPENDENCIES
   shotgun
   sinatra (~> 4.0)
   sinatra-activerecord
-  sqlite3 (~> 1.7)
+  sqlite3 (~> 2.0)
   standard
   webrick
   will_paginate
