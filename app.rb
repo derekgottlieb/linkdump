@@ -4,6 +4,7 @@ require "json"
 require "mechanize"
 # require 'pry'
 require "erb"
+require "rss"
 require "will_paginate"
 require "will_paginate/active_record"
 
@@ -56,6 +57,28 @@ end
 #  content_type :html
 #  send_file './public/index.html'
 # end
+
+get "/feed" do
+  rss = RSS::Maker.make("atom") do |maker|
+    maker.channel.author = CONFIG.fetch("feed_author")
+    maker.channel.about = CONFIG["feed_about"]
+    maker.channel.title = CONFIG["feed_title"]
+
+    Link.order(created_at: :desc).limit(10).each do |link|
+      maker.items.new_item do |item|
+        item.link = link.url
+        item.title = link.title
+        item.title ||= link.url
+        item.updated = link.created_at
+
+        maker.channel.updated ||= link.created_at
+      end
+    end
+  end
+
+  content_type :atom
+  halt rss.to_s
+end
 
 after do
   # Close the connection after the request is done so that we don't

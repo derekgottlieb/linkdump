@@ -110,6 +110,8 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.1)
+    rss (0.3.0)
+      rexml
     rubocop (1.62.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -183,6 +185,7 @@ DEPENDENCIES
   rack-test
   rake
   rspec
+  rss
   shotgun
   sinatra (~> 4.0)
   sinatra-activerecord

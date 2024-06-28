@@ -1,3 +1,6 @@
 environment: <%= ENV['APP_ENV'] || 'development' %>
 auth_username: <%= ENV['AUTH_USERNAME'] || 'username' %>
 auth_password: <%= ENV['AUTH_PASSWORD'] || 'password' %>
+feed_author: <%= ENV['FEED_AUTHOR'] || 'Author' %>
+feed_about: <%= ENV['FEED_ABOUT'] || 'About' %>
+feed_title: <%= ENV['FEED_TITLE'] || 'Title' %>
