@@ -37,7 +37,7 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.7.2)
     language_server-protocol (3.17.0.3)
-    lefthook (1.7.15)
+    lefthook (1.7.16)
     lint_roller (1.1.0)
     mechanize (2.12.1)
       addressable (~> 2.8)
