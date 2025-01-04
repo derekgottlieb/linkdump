@@ -1,8 +1,7 @@
 # linkdump
 Simple link dump Sinatra app (JSON API + basic web views)
 
-[![derekgottlieb/linkdump](https://github.com/derekgottlieb/linkdump/actions/workflows/linkdump.yml/badge.svg)](https://github.com/derekgottlieb/linkdump/actions/workflows/linkdump.yml)
-![Build status](https://github.com/derekgottlieb/linkdump/actions/workflows/linkdump.yml/badge.svg)
+[![Build status](https://github.com/derekgottlieb/linkdump/actions/workflows/linkdump.yml/badge.svg)](https://github.com/derekgottlieb/linkdump/actions/workflows/linkdump.yml)
 [![Code Climate](https://codeclimate.com/github/derekgottlieb/linkdump/badges/gpa.svg)](https://codeclimate.com/github/derekgottlieb/linkdump)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/testdouble/standard)
 
