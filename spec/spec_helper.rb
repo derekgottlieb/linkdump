@@ -7,7 +7,7 @@ require "pry"
 require "active_record/fixtures"
 require_relative "support/auth_helper"
 
-raise "Migrations pending" if ActiveRecord::Base.connection.migration_context.needs_migration?
+raise "Migrations pending" if ActiveRecord::Base.connection_pool.migration_context.needs_migration?
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
