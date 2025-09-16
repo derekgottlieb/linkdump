@@ -4,6 +4,7 @@ describe "routes/api/tags" do
   end
 
   include AuthHelper
+
   before(:each) do
     http_login
   end
