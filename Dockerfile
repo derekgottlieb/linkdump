@@ -26,7 +26,7 @@ ENV RUBY_YJIT_ENABLE=1
 
 USER ruby
 COPY --chown=ruby:ruby Gemfile* /usr/src/app/
-RUN bundle install --deployment
+RUN bundle config set deployment true && bundle install
 COPY --chown=ruby:ruby . /usr/src/app
 
 ENTRYPOINT [ "/usr/bin/dumb-init", "--" ]
